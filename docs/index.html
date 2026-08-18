@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="YAMLA — Yet Another Morse Learning App. Learn Morse code reception by sound, progressively and completely offline.">
+  <title>YAMLA — Yet Another Morse Learning App</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f7f7f5;
+      --card: #ffffff;
+      --text: #171717;
+      --muted: #646464;
+      --line: #ddddda;
+      --accent: #222222;
+      --button-text: #ffffff;
+      --code-bg: #ececea;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111111;
+        --card: #181818;
+        --text: #f2f2f2;
+        --muted: #aaaaaa;
+        --line: #303030;
+        --accent: #f2f2f2;
+        --button-text: #111111;
+        --code-bg: #242424;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 76px 0 50px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .morse-mark {
+      margin: 0 0 24px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: clamp(1.05rem, 2.7vw, 1.35rem);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: .08em;
+      white-space: pre;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3.2rem, 10vw, 6.3rem);
+      line-height: .95;
+      letter-spacing: -.065em;
+    }
+
+    .subtitle {
+      margin: 18px 0 0;
+      font-size: clamp(1.15rem, 3vw, 1.5rem);
+      color: var(--muted);
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 32px 0 0;
+      font-size: 1.15rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 17px;
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: var(--button-text);
+    }
+
+    main { padding: 56px 0 72px; }
+
+    section { margin: 0 0 56px; }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 1.7rem;
+      letter-spacing: -.025em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .card h3 {
+      margin: 0 0 7px;
+      font-size: 1.05rem;
+    }
+
+    .card p { margin: 0; color: var(--muted); }
+
+    .plain-list {
+      padding-left: 1.25rem;
+      margin-bottom: 0;
+    }
+
+    code {
+      background: var(--code-bg);
+      padding: .1em .35em;
+      border-radius: 4px;
+    }
+
+    footer {
+      padding: 26px 0 42px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    @media (max-width: 650px) {
+      header { padding-top: 54px; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="morse-mark" aria-label="YAMLA in Morse code">-.--
+.-
+--
+.-..
+.-</div>
+      <h1>YAMLA</h1>
+      <p class="subtitle">Yet Another Morse Learning App</p>
+      <p class="lead">A simple Android app for learning Morse code reception by sound — progressively, without counting dots and dashes.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/JonasAlvarez/YAMLA/releases">Releases</a>
+        <a class="button" href="https://github.com/JonasAlvarez/YAMLA">GitHub repository</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Listen. Recognise. Progress.</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Progressive learning</h3>
+          <p>Characters and sequence length are introduced gradually as reception improves.</p>
+        </article>
+        <article class="card">
+          <h3>Learn the sound</h3>
+          <p>Training is designed to encourage direct recognition of each character instead of consciously counting dits and dahs.</p>
+        </article>
+        <article class="card">
+          <h3>Practice and listening</h3>
+          <p>Use interactive practice when you want to answer, or continuous listening when you simply want to train your ear.</p>
+        </article>
+        <article class="card">
+          <h3>Your own pace</h3>
+          <p>Adjust character speed, Farnsworth timing, tone frequency and other listening options.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Offline by design</h2>
+      <p>YAMLA works completely offline. It does not require an account and does not use telemetry, analytics, advertising, cloud services or automatic update checks.</p>
+      <p>Your learning data and settings stay on your device. YAMLA does not contact GitHub to discover new versions.</p>
+    </section>
+
+    <section>
+      <h2>Android releases</h2>
+      <p>Official YAMLA builds are published in this repository's <a href="https://github.com/JonasAlvarez/YAMLA/releases">Releases</a> section. Each release includes the Android package and its SHA-256 checksum.</p>
+      <p>Updates are intentionally manual: download a newer official APK and install it over the existing version.</p>
+    </section>
+
+    <section>
+      <h2>Current scope</h2>
+      <ul class="plain-list">
+        <li>Morse code reception training</li>
+        <li>Progressive character learning</li>
+        <li>Progressive sequence length</li>
+        <li>Adjustable character speed</li>
+        <li>Farnsworth timing</li>
+        <li>Practice and continuous listening modes</li>
+        <li>Local statistics and learning progress</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>About this repository</h2>
+      <p>This public repository is used for the presentation and distribution of YAMLA. It does not contain the application's source code.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">YAMLA — Yet Another Morse Learning App</div>
+  </footer>
+</body>
+</html>
