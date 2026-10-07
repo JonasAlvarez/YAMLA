@@ -2,19 +2,38 @@
 
 **Yet Another Morse Learning App**
 
-YAMLA is an application for learning and practising Morse code reception.
+YAMLA is an offline Android application for learning and practising Morse code reception by listening.
 
 It is designed around progressive listening practice, helping the user recognise Morse characters by sound rather than by counting dots and dashes.
+
+**Current stable version: YAMLA 1.0.0**
+
+[Download YAMLA 1.0.0](https://github.com/JonasAlvarez/YAMLA/releases/latest)
 
 ## Features
 
 - Progressive Morse code reception training
-- Character-based learning progression
-- Adjustable character speed
-- Farnsworth timing
-- Practice and listening modes
-- Local learning progress and statistics
+- Five selectable learning orders: YAMLA, LCWO.net, Koch, G4FON, and alphabetical / numeric
+- Adaptive practice that gives more weight to characters that need more work
+- Per-character knowledge tracking and practice statistics
+- Practice with individual characters and progressively longer groups
+- Continuous listening mode
+- Adjustable Morse speed and Farnsworth timing
+- Letters, numbers and common Morse symbols
+- Option to practise or listen using all characters independently of the current learning progression
+- Real-text listening and practice
+- Background audio support on Android
+- Configurable learning and session settings
+- English and Spanish interface
 - Completely offline operation
+
+## Learning approach
+
+YAMLA introduces characters progressively and tracks performance independently for each character.
+
+Practice is adaptive: characters with less consolidated knowledge are selected more often, while already well-known characters continue to be reviewed.
+
+Statistics are preserved when changing learning order, so previously acquired knowledge is retained even when a character appears at a different point in another curriculum.
 
 ## Offline and private
 
@@ -39,13 +58,21 @@ YAMLA is currently distributed for **Android**.
 
 Other platforms may be considered in the future.
 
-## Installation
+## Download and installation
 
-Official builds of YAMLA are distributed through the **Releases** section of this repository.
+Official builds of YAMLA are distributed through the [Releases](https://github.com/JonasAlvarez/YAMLA/releases) section of this repository.
+
+YAMLA 1.0.0 provides three Android APKs:
+
+- **arm64-v8a** — recommended for most current Android phones and tablets
+- **armeabi-v7a** — for older 32-bit ARM Android devices
+- **x86_64** — primarily for x86_64 devices and emulators
+
+If you are unsure which version to use, **arm64-v8a is normally the right choice for a modern Android device**.
 
 To install YAMLA on Android:
 
-1. Download the APK for the desired YAMLA release.
+1. Download the appropriate APK from the latest release.
 2. Verify its SHA-256 checksum if desired.
 3. Open the downloaded APK on the Android device.
 4. Android may ask for permission to install applications from this source.
@@ -73,7 +100,7 @@ Uninstalling YAMLA before installing a newer version is neither necessary nor re
 
 ## Verifying a download
 
-Each official release provides a SHA-256 checksum for its APK.
+Each official release provides a `SHA256SUMS.txt` file containing the SHA-256 checksums for its APKs.
 
 After downloading the APK, calculate its SHA-256 hash and compare it with the value published with the release.
 
@@ -91,11 +118,13 @@ Get-FileHash .\YAMLA-*.apk -Algorithm SHA256
 
 The calculated value must exactly match the checksum published with the release.
 
+## Background listening
+
+On some Android devices, aggressive battery optimisation may interrupt long listening sessions while the screen is off. If this occurs, disabling battery optimisation for YAMLA may help.
+
 ## Releases
 
-Official YAMLA versions are published in the **GitHub Releases** section of this repository.
-
-Each release will include the application package and its corresponding SHA-256 checksum.
+Official YAMLA versions are published in the [GitHub Releases](https://github.com/JonasAlvarez/YAMLA/releases) section of this repository.
 
 Updates are intentionally manual: YAMLA itself never connects to GitHub to discover or download new versions.
 
